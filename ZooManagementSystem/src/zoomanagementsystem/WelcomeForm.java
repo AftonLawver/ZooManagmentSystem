@@ -30,38 +30,31 @@ public class WelcomeForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Icon1 = new javax.swing.JLabel();
+        icon1 = new javax.swing.JLabel();
         welcomeLabel = new javax.swing.JLabel();
-        Icon2 = new javax.swing.JLabel();
+        icon2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        searchTextBox = new javax.swing.JTextField();
+        searchButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         welcomeLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         searchLabel = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        searchTextBox = new javax.swing.JTextField();
-        searchButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("RAF Zoo");
         setLocationByPlatform(true);
         setResizable(false);
 
-        Icon1.setIcon(new javax.swing.ImageIcon("C:\\Users\\siu851463587\\Downloads\\koala.png")); // NOI18N
-        jPanel1.add(Icon1);
+        icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/koala.png"))); // NOI18N
+        jPanel1.add(icon1);
 
         welcomeLabel.setFont(new java.awt.Font("Elephant", 0, 21)); // NOI18N
         welcomeLabel.setText("Welcome to The RAF ZOO ");
         jPanel1.add(welcomeLabel);
 
-        Icon2.setIcon(new javax.swing.ImageIcon("C:\\Users\\siu851463587\\Downloads\\chameleon.png")); // NOI18N
-        jPanel1.add(Icon2);
-
-        welcomeLabel2.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
-        welcomeLabel2.setText("Home to 15 Exotic Animals! ");
-        jPanel3.add(welcomeLabel2);
-
-        searchLabel.setText("Search for an Animal Below");
-        jPanel2.add(searchLabel);
+        icon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/peacock.png"))); // NOI18N
+        jPanel1.add(icon2);
 
         searchTextBox.setText("Enter Animal Name Here");
         searchTextBox.addActionListener(new java.awt.event.ActionListener() {
@@ -79,6 +72,13 @@ public class WelcomeForm extends javax.swing.JFrame {
         });
         jPanel4.add(searchButton);
 
+        welcomeLabel2.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        welcomeLabel2.setText("Home to 15 Exotic Animals! ");
+        jPanel3.add(welcomeLabel2);
+
+        searchLabel.setText("Search for an Animal Below");
+        jPanel2.add(searchLabel);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -93,7 +93,7 @@ public class WelcomeForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -108,7 +108,7 @@ public class WelcomeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_searchTextBoxActionPerformed
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        JOptionPane.showMessageDialog(null, "Animal Found!");
+        JOptionPane.showMessageDialog(this, "Animal Found!");
     }//GEN-LAST:event_searchButtonActionPerformed
 
     /**
@@ -147,8 +147,8 @@ public class WelcomeForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Icon1;
-    private javax.swing.JLabel Icon2;
+    private javax.swing.JLabel icon1;
+    private javax.swing.JLabel icon2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
