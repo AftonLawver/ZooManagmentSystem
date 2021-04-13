@@ -15,8 +15,10 @@ public class ZooManagementSystem {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-           WelcomeForm wf = new WelcomeForm();
-           wf.setVisible(true);
+        LoginForm lf = new LoginForm();
+        lf.setVisible(true);
+        
+           
     }
     
 }
