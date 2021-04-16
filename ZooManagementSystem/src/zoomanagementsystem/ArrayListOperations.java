@@ -12,7 +12,14 @@ import java.util.ArrayList;
  * @author lawve
  */
 public class ArrayListOperations {
-   ArrayList<String> animals;
+    ArrayList<String> animals;
+    //--------------------------------------------------------------------------
+    // Constructor
+    //--------------------------------------------------------------------------
+    public ArrayListOperations() {
+       ArrayList<String> animals; 
+    }
+   
     // Create initial list of animals in the zoo
     public ArrayList createArrayList() {
         ArrayList<String> animals = new ArrayList<String>();
@@ -36,8 +43,7 @@ public class ArrayListOperations {
     }
     
     // Convert the arraylist to a string that is separated (one on each line)
-    public String stringArrayList(ArrayListOperations array) {
-
+    public String stringArrayList() {
         StringBuilder sb = new StringBuilder();
         for (String s : animals) {
             sb.append(s);
@@ -46,6 +52,7 @@ public class ArrayListOperations {
         String str = sb.toString();
         System.out.println(str);
         return str;
+        
         
     }
     

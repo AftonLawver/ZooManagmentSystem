@@ -21,11 +21,12 @@ public class LoginForm extends javax.swing.JFrame {
     }
     
     public boolean loginCheck() {
+        // Get the username and password that the user input into the text 
+        // fields and convert them to a string
         String username = usernameTextField.getText();
-        testLabel.setText(username);
         String password = passwordTextField.getText();
-        testLabel2.setText(password);
-        if (username == "user" && password == "password") {
+        
+        if ("user".equals(username) && "password".equals(password)){
             JOptionPane.showMessageDialog(this, "Login Successful!"); 
             return true;
         }
@@ -57,12 +58,11 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         guestButton = new javax.swing.JButton();
         loginButton = new javax.swing.JButton();
-        testLabel = new javax.swing.JLabel();
-        testLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
         setLocationByPlatform(true);
+        setResizable(false);
 
         icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoomanagementsystem/flamingo.png"))); // NOI18N
         jPanel1.add(icon1);
@@ -74,16 +74,34 @@ public class LoginForm extends javax.swing.JFrame {
         icon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoomanagementsystem/tortoise.png"))); // NOI18N
         jPanel1.add(icon2);
 
-        usernameLabel.setText("Username:");
+        usernameLabel.setText("Username");
         jPanel2.add(usernameLabel);
 
+        usernameTextField.setForeground(new java.awt.Color(153, 153, 153));
         usernameTextField.setText("Username");
+        usernameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                usernameTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                usernameTextFieldFocusLost(evt);
+            }
+        });
         jPanel2.add(usernameTextField);
 
-        passwordLabel.setText("Password:");
+        passwordLabel.setText("Password");
         jPanel4.add(passwordLabel);
 
+        passwordTextField.setForeground(new java.awt.Color(153, 153, 153));
         passwordTextField.setText("Password");
+        passwordTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passwordTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                passwordTextFieldFocusLost(evt);
+            }
+        });
         jPanel4.add(passwordTextField);
 
         guestButton.setText("Guest");
@@ -101,12 +119,6 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
         jPanel3.add(loginButton);
-
-        testLabel.setText("test");
-        jPanel3.add(testLabel);
-
-        testLabel2.setText("test2");
-        jPanel3.add(testLabel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,15 +151,33 @@ public class LoginForm extends javax.swing.JFrame {
         wf.setVisible(true);
     }//GEN-LAST:event_guestButtonActionPerformed
 
+    // Method that is performed when the login button is clicked.
+    // Checks if the login credentials are correct. 
+    // If they are correct it opens the welcome form. 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        if (loginCheck() == true); {
+        if (loginCheck()) {
             WelcomeForm wf = new WelcomeForm();
             wf.setLocationRelativeTo(null);
             wf.setVisible(true);
         }
-
         
     }//GEN-LAST:event_loginButtonActionPerformed
+
+    private void usernameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusGained
+        usernameTextField.setText(null);
+    }//GEN-LAST:event_usernameTextFieldFocusGained
+
+    private void usernameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusLost
+        usernameTextField.setText("Username");
+    }//GEN-LAST:event_usernameTextFieldFocusLost
+
+    private void passwordTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordTextFieldFocusGained
+        passwordTextField.setText(null);
+    }//GEN-LAST:event_passwordTextFieldFocusGained
+
+    private void passwordTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordTextFieldFocusLost
+        passwordTextField.setText("Password");
+    }//GEN-LAST:event_passwordTextFieldFocusLost
 
     /**
      * @param args the command line arguments
@@ -195,8 +225,6 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JTextField passwordTextField;
-    private javax.swing.JLabel testLabel;
-    private javax.swing.JLabel testLabel2;
     private javax.swing.JLabel usernameLabel;
     private javax.swing.JTextField usernameTextField;
     private javax.swing.JLabel welcomeLabel;

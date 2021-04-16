@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author lawve
  */
 public class AllAnimals extends javax.swing.JFrame {
-    ArrayListOperations listOfAnimals;
+    
     
     
     /**
@@ -20,7 +20,11 @@ public class AllAnimals extends javax.swing.JFrame {
      */
     public AllAnimals() {
         initComponents();
-       
+        ArrayListOperations listOfAnimals = new ArrayListOperations();
+        listOfAnimals.createArrayList();
+        String strAnimals = listOfAnimals.stringArrayList();
+        allAnimalsTextArea.setText(strAnimals);
+        
     } 
 
 
@@ -35,8 +39,8 @@ public class AllAnimals extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        allAnimalsTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,11 +48,12 @@ public class AllAnimals extends javax.swing.JFrame {
         jLabel1.setText("RAF Zoo");
         jPanel1.add(jLabel1);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(15);
-        jScrollPane1.setViewportView(jTextArea1);
+        allAnimalsTextArea.setColumns(20);
+        allAnimalsTextArea.setRows(18);
+        allAnimalsTextArea.setTabSize(5);
+        jScrollPane3.setViewportView(allAnimalsTextArea);
 
-        jPanel1.add(jScrollPane1);
+        jPanel1.add(jScrollPane3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,15 +104,16 @@ public class AllAnimals extends javax.swing.JFrame {
             public void run() {
                 new AllAnimals().setVisible(true);
                 
+                        
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea allAnimalsTextArea;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }
 
