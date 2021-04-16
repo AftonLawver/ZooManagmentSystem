@@ -7,18 +7,25 @@ package zoomanagementsystem;
 
 /**
  *
- * @author fenri
+ * @author Faith Enrietto
+ * 4-16-21
+ * Version 2
  */
-public class Giraffe {
-    private int enclosure;  //number of enclosure
-    private String name;    //animal name
-    private String family;  //type of animal (i.e. mammal, reptile..)
-    
-    public Giraffe(int enclosure, String name, String family){
+public class Giraffe extends SuperAnimals{
+  
+    /**
+     * Giraffe constructor class
+     * @param enclosure
+     * @param name
+     * @param family
+     * @param animals
+     * @param food 
+     */
+    public Giraffe(int enclosure, String name, String family, int animals, int food){
         //needs to extend the super class
-        //super(enclosure, name, family)
-        
+        super(enclosure, name, family, animals, food);  
     }
     
+    //getters?
     
 }
