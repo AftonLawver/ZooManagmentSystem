@@ -17,9 +17,9 @@ public class ZooManagementSystem {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    
-        
+
         LoginForm lf = new LoginForm();
+        lf.setLocationRelativeTo(null);
         lf.setVisible(true);
         
            

@@ -35,7 +35,7 @@ public class ArrayListOperations {
         return animals;
     }
     
-    // Copnvert the arraylist to a string that is separated (one on each line)
+    // Convert the arraylist to a string that is separated (one on each line)
     public String stringArrayList(ArrayListOperations array) {
 
         StringBuilder sb = new StringBuilder();

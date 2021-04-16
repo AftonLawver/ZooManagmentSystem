@@ -25,7 +25,7 @@ public class LoginForm extends javax.swing.JFrame {
         testLabel.setText(username);
         String password = passwordTextField.getText();
         testLabel2.setText(password);
-        if (username == "user" & password == "password") {
+        if (username == "user" && password == "password") {
             JOptionPane.showMessageDialog(this, "Login Successful!"); 
             return true;
         }
@@ -62,6 +62,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
+        setLocationByPlatform(true);
 
         icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoomanagementsystem/flamingo.png"))); // NOI18N
         jPanel1.add(icon1);
@@ -134,12 +135,14 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void guestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guestButtonActionPerformed
         WelcomeForm wf = new WelcomeForm();
+        wf.setLocationRelativeTo(null);
         wf.setVisible(true);
     }//GEN-LAST:event_guestButtonActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         if (loginCheck() == true); {
             WelcomeForm wf = new WelcomeForm();
+            wf.setLocationRelativeTo(null);
             wf.setVisible(true);
         }
 

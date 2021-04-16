@@ -13,6 +13,8 @@ import java.util.ArrayList;
  */
 public class AllAnimals extends javax.swing.JFrame {
     ArrayListOperations listOfAnimals;
+    
+    
     /**
      * Creates new form AllAnimals
      */
