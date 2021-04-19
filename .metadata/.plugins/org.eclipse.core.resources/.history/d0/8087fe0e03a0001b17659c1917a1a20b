@@ -1,0 +1,7 @@
+
+public class SavingsAccount extends BankAccount  {
+	private double rate = 0.025;
+	private int savingsNumber = 0;
+	
+	
+}

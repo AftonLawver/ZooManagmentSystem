@@ -9,12 +9,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author lawve
+ * @author Afton Lawver
  */
 public class AllAnimals extends javax.swing.JFrame {
-    
-    
-    
     /**
      * Creates new form AllAnimals
      */
@@ -24,7 +21,6 @@ public class AllAnimals extends javax.swing.JFrame {
         listOfAnimals.createArrayList();
         String strAnimals = listOfAnimals.stringArrayList();
         allAnimalsTextArea.setText(strAnimals);
-        
     } 
 
 
