@@ -146,9 +146,10 @@ public class LoginForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void guestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guestButtonActionPerformed
-        WelcomeFormSupervisor wf = new WelcomeFormSupervisor();
-        wf.setLocationRelativeTo(null);
-        wf.setVisible(true);
+        WelcomeFormGuest wfg = new WelcomeFormGuest();
+        wfg.setLocationRelativeTo(null);
+        wfg.setSize(525,275);
+        wfg.setVisible(true);
     }//GEN-LAST:event_guestButtonActionPerformed
 
     // Method that is performed when the login button is clicked.

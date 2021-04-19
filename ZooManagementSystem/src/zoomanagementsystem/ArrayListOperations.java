@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 public class ArrayListOperations {
     ArrayList<String> animals;
+    
     //--------------------------------------------------------------------------
     // Constructor
     //--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ public class ArrayListOperations {
    
     // Create initial list of animals in the zoo
     public ArrayList createArrayList() {
-        ArrayList<String> animals = new ArrayList<String>();
+        animals = new ArrayList<String>();
         animals.add("Lion");
         animals.add("Tiger");
         animals.add("Panda");

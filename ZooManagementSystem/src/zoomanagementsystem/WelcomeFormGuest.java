@@ -5,6 +5,8 @@
  */
 package zoomanagementsystem;
 
+import java.awt.List;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,12 +14,13 @@ import javax.swing.JOptionPane;
  * @author Afton Lawver
  */
 public class WelcomeFormGuest extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form WelcomeFormGuest
      */
     public WelcomeFormGuest() {
         initComponents();
+
     }
 
     /**
@@ -29,22 +32,21 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         icon1 = new javax.swing.JLabel();
         welcomeLabel = new javax.swing.JLabel();
         icon2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        welcomeLabel2 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        searchTextField = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         searchButton = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        searchLabel = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
+        searchTextField = new javax.swing.JTextField();
         allAnimalsButton = new javax.swing.JButton();
+        welcomeLabel2 = new javax.swing.JLabel();
+        searchLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        downArrowLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(449, 210));
         setPreferredSize(new java.awt.Dimension(449, 210));
         setResizable(false);
 
@@ -58,11 +60,17 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
         icon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/peacock.png"))); // NOI18N
         jPanel2.add(icon2);
 
-        jPanel1.add(jPanel2);
-
-        welcomeLabel2.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
-        welcomeLabel2.setText("Home to 15 Exotic Animals! ");
-        jPanel3.add(welcomeLabel2);
+        searchButton.setText("Search!");
+        searchButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchButtonMouseClicked(evt);
+            }
+        });
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
 
         searchTextField.setForeground(new java.awt.Color(153, 153, 153));
         searchTextField.setText("Enter Animal Name Here");
@@ -79,18 +87,6 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
                 searchTextFieldActionPerformed(evt);
             }
         });
-        jPanel5.add(searchTextField);
-
-        searchButton.setText("Search!");
-        searchButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchButtonActionPerformed(evt);
-            }
-        });
-        jPanel5.add(searchButton);
-
-        searchLabel.setText("Search for an Animal Below");
-        jPanel4.add(searchLabel);
 
         allAnimalsButton.setText("See All Animals");
         allAnimalsButton.setMaximumSize(new java.awt.Dimension(1250, 30));
@@ -100,50 +96,95 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
                 allAnimalsButtonActionPerformed(evt);
             }
         });
-        jPanel6.add(allAnimalsButton);
+
+        welcomeLabel2.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        welcomeLabel2.setText("Home to 15 Exotic Animals! ");
+
+        searchLabel.setText("Search for an Animal Below");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
+        jLabel1.setText("i.e. Elephant");
+
+        downArrowLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zoomanagementsystem/down-arrow.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(searchButton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(searchLabel)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(53, 53, 53)
+                .addComponent(allAnimalsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(143, 143, 143)
+                .addComponent(welcomeLabel2)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(downArrowLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(welcomeLabel2)
+                .addGap(20, 20, 20)
+                .addComponent(searchLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(downArrowLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchButton)
+                    .addComponent(allAnimalsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusGained
-        searchTextField.setText(null);
+        if(searchTextField.getText().trim().equals("Enter Animal Name Here")) {
+            searchTextField.setText(null);
+        }
     }//GEN-LAST:event_searchTextFieldFocusGained
 
     private void searchTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusLost
-        searchTextField.setText("Enter Animal Name Here");
+        if(searchTextField.getText().trim().isEmpty()) {
+            searchTextField.setText("Enter Animal Name Here");
+        }
+        
     }//GEN-LAST:event_searchTextFieldFocusLost
 
     private void searchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextFieldActionPerformed
@@ -151,7 +192,7 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
     }//GEN-LAST:event_searchTextFieldActionPerformed
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        JOptionPane.showMessageDialog(this, "Animal Found!");
+
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void allAnimalsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allAnimalsButtonActionPerformed
@@ -159,7 +200,25 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
         aa.setLocationRelativeTo(null);
         aa.setVisible(true);
     }//GEN-LAST:event_allAnimalsButtonActionPerformed
-
+/**
+ * Method that will run when the search button is clicked.
+ * This will search the arrayList for the name typed in by the user.
+ * @param evt 
+ */
+    private void searchButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMouseClicked
+        String searchedAnimal = searchTextField.getText().trim().toString();
+        ArrayListOperations listOfAnimals = new ArrayListOperations();
+        ArrayList allAnimals = listOfAnimals.createArrayList();
+        if(allAnimals.contains(searchedAnimal)) {
+            JOptionPane.showMessageDialog(this, "Animal Found!");
+        }
+        else {
+            JOptionPane.showMessageDialog(this, "Sorry, we do not have that animal.");
+        }
+            
+        
+    }//GEN-LAST:event_searchButtonMouseClicked
+    
     /**
      * @param args the command line arguments
      */
@@ -197,14 +256,12 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton allAnimalsButton;
+    private javax.swing.JLabel downArrowLabel;
     private javax.swing.JLabel icon1;
     private javax.swing.JLabel icon2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JButton searchButton;
     private javax.swing.JLabel searchLabel;
     private javax.swing.JTextField searchTextField;
