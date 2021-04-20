@@ -24,6 +24,13 @@ public class Giraffe extends SuperAnimals{
     public Giraffe(int enclosure, String name, String family, int animals, int food){
         //needs to extend the super class
         super(enclosure, name, family, animals, food);  
+        
+        //declare specific animal characteristics
+        enclosure = 7;      //random number - fix later
+        name = "Giraffe";
+        family = "Mammal";
+        animals = 5;
+        food = 1300;         //pounds of food in inventory?
     }
     
     //getters?
