@@ -10,14 +10,67 @@ package zoomanagementsystem;
  * @author SIU851463587
  */
 public class AnimalFormGuest extends javax.swing.JFrame {
-
+   
+    SuperAnimals myAnimal;
+    public static Integer mappingValue;
+    
     /**
      * Creates new form AnimalForm
      */
-    public AnimalFormGuest() {
+    // Constructor takes in a parameter called mappingValue
+    // This is what will be used in the switch statement to create an 
+    // SuperAnimal object of whatever class matches the mappingValue.
+    public AnimalFormGuest(int mappingValue) {
         initComponents();
+        createObjectAnimal(mappingValue);
+        setTitle();
+        
     }
+    
+    public void setTitle() {
+        String animalName = myAnimal.getName();
+        titleLabel.setText(animalName);
+    }
+    
+    public void createObjectAnimal(int mappingValue) {
 
+        switch(mappingValue) {
+            case 1: 
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4: 
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9: 
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
+            case 12: 
+                break;
+            case 13:
+                break;
+            case 14:
+                break;
+            case 15:
+                break;
+            case 16: myAnimal = new Koala();   
+
+        }
+        
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,17 +80,27 @@ public class AnimalFormGuest extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        titleLabel = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        titleLabel.setFont(new java.awt.Font("Elephant", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(243, Short.MAX_VALUE))
         );
 
         pack();
@@ -74,11 +137,12 @@ public class AnimalFormGuest extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AnimalFormGuest().setVisible(true);
+               new AnimalFormGuest(mappingValue).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 }

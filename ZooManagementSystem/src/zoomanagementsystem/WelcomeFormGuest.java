@@ -7,6 +7,8 @@ package zoomanagementsystem;
 
 import java.awt.List;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,13 +16,14 @@ import javax.swing.JOptionPane;
  * @author Afton Lawver
  */
 public class WelcomeFormGuest extends javax.swing.JFrame {
-    
+    public int mappingValue;
     /**
      * Creates new form WelcomeFormGuest
      */
     public WelcomeFormGuest() {
         initComponents();
 
+        
     }
 
     /**
@@ -206,7 +209,7 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
  * @param evt 
  */
     private void searchButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMouseClicked
-        String searchedAnimal = searchTextField.getText().trim().toString();
+        String searchedAnimal = searchTextField.getText().trim();
         ArrayListOperations listOfAnimals = new ArrayListOperations();
         ArrayList allAnimals = listOfAnimals.createArrayList();
         if(allAnimals.contains(searchedAnimal)) {
@@ -215,10 +218,83 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
         else {
             JOptionPane.showMessageDialog(this, "Sorry, we do not have that animal.");
         }
-            
+        Map map = createMap();
+        int mappingValue = (int) map.get(searchedAnimal);
+        
+        //Object animal = createObjectAnimal(mappingValue);
+        AnimalFormGuest afg = new AnimalFormGuest(mappingValue);
+        afg.setLocationRelativeTo(null); // centers the frame in the screen
+        afg.setVisible(true);
+        
+        
+        
         
     }//GEN-LAST:event_searchButtonMouseClicked
     
+    public Map createMap() {
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        map.put("Lion", 1);
+        map.put("Tiger", 2);
+        map.put("Panda", 3);
+        map.put("Iguana", 4);
+        map.put("Flamingo", 5);
+        map.put("Shark", 6);
+        map.put("Bald Eagle", 7);
+        map.put("Cheetah", 8);
+        map.put("Giraffe", 9);
+        map.put("Elephant", 10);
+        map.put("Rhinoceros", 11);
+        map.put("Penguin", 12);
+        map.put("Peacock", 13);
+        map.put("Toucan", 14);
+        map.put("Monkey", 15);
+        map.put("Koala", 16);
+        return map;
+    }
+    
+    public void createObjectAnimal(int mappingValue) {
+        
+        switch(mappingValue) {
+            case 1: 
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4: 
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9: 
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
+            case 12: 
+                break;
+            case 13:
+                break;
+            case 14:
+                break;
+            case 15:
+                break;
+            case 16: Koala object = new Koala();   
+
+        }
+
+        
+    }
+    
+    public Integer getMappingValue() {
+        return mappingValue;
+    }
     /**
      * @param args the command line arguments
      */

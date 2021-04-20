@@ -14,7 +14,9 @@ public class SuperAnimals {
     private String name;        //basic name of animal
     private String family;      //what class the animal belongs to, i.e. mammal
     private int numOfAnimals;   //the number of animals the zoo has
-    private int food;        //inventory of animal's food
+    private int foodLeft;        //inventory of animal's food
+    private int feedingAmount;   // feeding amount per feeding
+    private String typeOfFood;   // what the animal eats
   
   /**
    * Constructor for SuperAnimal class
@@ -24,13 +26,8 @@ public class SuperAnimals {
    * @param animals the number of that animal the zoo has
    * @param food the amount of food the animal has
    */
-  public SuperAnimals(int enclos, String name, String family, int animals, int food){
-      this.enclosure = enclos;
-      this.name = name;
-      this.family = family;
-      this.numOfAnimals = animals;
-      this.food = food;
-  }
+ 
+
 
   /**
    * Accessor method for enclosure number
@@ -57,7 +54,7 @@ public class SuperAnimals {
     }
 
     /**
-     * Accessore for the number of a certain animal
+     * Accessor for the number of a certain animal
      * @return number of animals
      */
     public int getNumOfAnimals() {
@@ -68,8 +65,16 @@ public class SuperAnimals {
      * Acessor for the int amount of food an animal has in stock
      * @return number of food
      */
-    public int getFood() {
-        return food;
+    public int getFoodLeft() {
+        return foodLeft;
+    }
+    
+    public int getFeedingAmount() {
+        return feedingAmount;
+    }
+    
+    public String getTypeOfFood() {
+        return typeOfFood;
     }
 
     /**
@@ -108,10 +113,17 @@ public class SuperAnimals {
      * Mutator for the amount food
      * @param food integer value for food
      */
-    public void setFood(int food) {
-        this.food = food;
+    public void setFoodLeft(int food) {
+        this.foodLeft = food;
     }
     
+    public void setFeedingAmount(int feedingAmount) {
+        this.feedingAmount = feedingAmount;
+    }
+    
+    public void setTypeOfFood(String foodType) {
+        this.typeOfFood = foodType;
+    }
   
   
 }
