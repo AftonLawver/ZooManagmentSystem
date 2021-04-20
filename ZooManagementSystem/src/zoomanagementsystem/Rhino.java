@@ -11,16 +11,14 @@ package zoomanagementsystem;
  */
 public class Rhino extends SuperAnimals{
     
-    /**
-     * Rhino constructor class
-     * @param enclosure
-     * @param name
-     * @param family
-     * @param animals
-     * @param food 
-     */
-    public Rhino(){
-        
+     public Rhino() {
+        super.setEnclosure(12);
+        super.setName("Rhinoceros");
+        super.setFamily("Mammal");
+        super.setFoodLeft(35);
+        super.setNumOfAnimals(3);
+        super.setFeedingAmount(4);
+        super.setTypeOfFood("Hay");
     }
     
 }

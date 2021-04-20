@@ -30,7 +30,7 @@ public class SuperAnimals {
 
 
   /**
-   * Accessor method for enclosure number
+   *  method for enclosure number
    * @return number of enclosure
    */
     public int getEnclosure() {
@@ -38,7 +38,7 @@ public class SuperAnimals {
     }
 
     /**
-     * Accessor method for animal name
+     *  method for animal name
      * @return String animal's name
      */
     public String getName() {
@@ -46,7 +46,7 @@ public class SuperAnimals {
     }
 
     /**
-     * Accessor for animal's class
+     *  for animal's class
      * @return String family value
      */
     public String getFamily() {
@@ -54,7 +54,7 @@ public class SuperAnimals {
     }
 
     /**
-     * Accessor for the number of a certain animal
+     *  for the number of a certain animal
      * @return number of animals
      */
     public int getNumOfAnimals() {
@@ -62,7 +62,7 @@ public class SuperAnimals {
     }
 
     /**
-     * Acessor for the int amount of food an animal has in stock
+     *  for the int amount of food an animal has in stock
      * @return number of food
      */
     public int getFoodLeft() {
@@ -78,7 +78,7 @@ public class SuperAnimals {
     }
 
     /**
-     * Mutator for animal enclosure number
+     *  for animal enclosure number
      * @param enclosure the number of the enclosure
      */
     public void setEnclosure(int enclosure) {
@@ -86,7 +86,7 @@ public class SuperAnimals {
     }
 
     /**
-     * Mutator for the animal's name
+     *  for the animal's name
      * @param name becomes the animal name
      */
     public void setName(String name) {
@@ -94,7 +94,7 @@ public class SuperAnimals {
     }
 
     /**
-     * Mutator for animal's family, i.e. class (bird, amphibian)
+     *  for animal's family, i.e. class (bird, amphibian)
      * @param family String value of the animal family
      */
     public void setFamily(String family) {
@@ -102,7 +102,7 @@ public class SuperAnimals {
     }
 
     /**
-     * Mutator for the number of animals in the zoo
+     *  for the number of animals in the zoo
      * @param numOfAnimals the integer amount of animals
      */
     public void setNumOfAnimals(int numOfAnimals) {
@@ -110,7 +110,7 @@ public class SuperAnimals {
     }
 
     /**
-     * Mutator for the amount food
+     *  for the amount food
      * @param food integer value for food
      */
     public void setFoodLeft(int food) {

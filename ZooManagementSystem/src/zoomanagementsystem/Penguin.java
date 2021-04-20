@@ -11,16 +11,13 @@ package zoomanagementsystem;
  */
 public class Penguin extends SuperAnimals{
     
-    /**
-     * Penguin constructor class
-     * @param enclosure
-     * @param name
-     * @param family
-     * @param animals
-     * @param food 
-     */
-    public Penguin(){
-        
+   public Penguin() {
+        super.setEnclosure(10);
+        super.setName("Penguin");
+        super.setFamily("Bird");
+        super.setFoodLeft(7);
+        super.setNumOfAnimals(9);
+        super.setFeedingAmount(1);
+        super.setTypeOfFood("Fish");
     }
-    
 }

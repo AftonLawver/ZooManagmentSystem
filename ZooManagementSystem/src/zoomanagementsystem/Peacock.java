@@ -12,16 +12,14 @@ package zoomanagementsystem;
 public class Peacock extends SuperAnimals{
 
     
-    /**
-     * Peacock constructor class
-     * @param enclosure
-     * @param name
-     * @param family
-     * @param animals
-     * @param food 
-     */
-    
-    public class Peacock extends SuperAnimals{
-    
+     public Peacock() {
+        super.setEnclosure(8);
+        super.setName("Peacock");
+        super.setFamily("Bird");
+        super.setFoodLeft(9);
+        super.setNumOfAnimals(8);
+        super.setFeedingAmount(1);
+        super.setTypeOfFood("Grain");
+    }
 }
-}
+

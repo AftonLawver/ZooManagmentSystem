@@ -13,9 +13,13 @@ public class Monkey extends SuperAnimals{
 
     
    
-     //Monkey constructor class
-
-    public Monkey(){
-       
+      public Monkey() {
+        super.setEnclosure(6);
+        super.setName("Monkey");
+        super.setFamily("Mammal");
+        super.setFoodLeft(23);
+        super.setNumOfAnimals(14);
+        super.setFeedingAmount(1);
+        super.setTypeOfFood("Fruits");
     }
 }

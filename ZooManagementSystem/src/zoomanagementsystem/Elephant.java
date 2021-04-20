@@ -14,8 +14,14 @@ public class Elephant extends SuperAnimals{
      // Elephant constructor class
 
 
-    public Elephant(){
-        
+     public Elephant() {
+        super.setEnclosure(2);
+        super.setName("Elephant");
+        super.setFamily("Mammal");
+        super.setFoodLeft(25);
+        super.setNumOfAnimals(6);
+        super.setFeedingAmount(2);
+        super.setTypeOfFood("Hay");
     }
 }
       

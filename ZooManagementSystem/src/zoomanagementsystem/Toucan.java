@@ -11,17 +11,14 @@ package zoomanagementsystem;
  */
 public class Toucan extends SuperAnimals{
     
-    /**
-     * Toucan constructor class
-     * @param enclosure
-     * @param name
-     * @param family
-     * @param animals
-     * @param food 
-     */
-    public Toucan(){
-        
+    public Toucan() {
+        super.setEnclosure(14);
+        super.setName("Toucan");
+        super.setFamily("Bird");
+        super.setFoodLeft(12);
+        super.setNumOfAnimals(5);
+        super.setFeedingAmount(1);
+        super.setTypeOfFood("Pellet feed");
     }
-
     
 }

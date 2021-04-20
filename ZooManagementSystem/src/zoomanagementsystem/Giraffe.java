@@ -14,13 +14,14 @@ package zoomanagementsystem;
 public class Giraffe extends SuperAnimals{
   
 
-    public Giraffe(){
-        //needs to extend the super class
-
-        
-
+     public Giraffe() {
+        super.setEnclosure(4);
+        super.setName("Giraffe");
+        super.setFamily("Mammal");
+        super.setFoodLeft(30);
+        super.setNumOfAnimals(6);
+        super.setFeedingAmount(4);
+        super.setTypeOfFood("Lettuce");
     }
-    
-    //getters?
     
 }
