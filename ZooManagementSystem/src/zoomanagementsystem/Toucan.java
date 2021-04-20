@@ -19,16 +19,9 @@ public class Toucan extends SuperAnimals{
      * @param animals
      * @param food 
      */
-    public Toucan(int enclosure, String name, String family, int animals, int food){
-        //needs to extend the super class
-        super(enclosure, name, family, animals, food);  
+    public Toucan(){
         
-        //declare specific animal characteristics
-        enclosure = 18;      //random number - fix later
-        name = "Toucan";
-        family = "Bird";
-        animals = 7;
-        food = 250;         //pounds of food in inventory?
     }
+
     
 }
