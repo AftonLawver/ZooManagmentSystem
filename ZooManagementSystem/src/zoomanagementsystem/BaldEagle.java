@@ -9,6 +9,16 @@ package zoomanagementsystem;
  *
  * @author beanrenee
  */
-public class BaldEagle {
+public class BaldEagle extends SuperAnimals{
+    
+    public BaldEagle() {
+        super.setEnclosure(7);
+        super.setName("Bald Eagle");
+        super.setFamily("Bird");
+        super.setFoodLeft(0);
+        super.setNumOfAnimals(1);
+        super.setFeedingAmount(1);
+        super.setTypeOfFood("Small Fish");
+    }
     
 }

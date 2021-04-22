@@ -9,6 +9,16 @@ package zoomanagementsystem;
  *
  * @author beanrenee
  */
-public class Shark {
+public class Shark extends SuperAnimals{
+    
+    public Shark() {
+        super.setEnclosure(6);
+        super.setName("Shark");
+        super.setFamily("Fish");
+        super.setFoodLeft(9);
+        super.setNumOfAnimals(6);
+        super.setFeedingAmount(1);
+        super.setTypeOfFood("Small Fish");
+    }
     
 }

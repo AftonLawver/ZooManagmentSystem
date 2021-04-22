@@ -9,6 +9,16 @@ package zoomanagementsystem;
  *
  * @author beanrenee
  */
-public class Tiger {
+public class Tiger extends SuperAnimals{
+    
+    public Tiger() {
+        super.setEnclosure(2);
+        super.setName("Tiger");
+        super.setFamily("Mammal");
+        super.setFoodLeft(3);
+        super.setNumOfAnimals(3);
+        super.setFeedingAmount(1);
+        super.setTypeOfFood("Antelope Meat");
+    }
     
 }

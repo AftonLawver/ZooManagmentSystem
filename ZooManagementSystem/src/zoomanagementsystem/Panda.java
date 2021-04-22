@@ -9,6 +9,16 @@ package zoomanagementsystem;
  *
  * @author beanrenee
  */
-public class Panda {
+public class Panda extends SuperAnimals{
+    
+    public Panda() {
+        super.setEnclosure(3);
+        super.setName("Panda");
+        super.setFamily("Mammal");
+        super.setFoodLeft(8);
+        super.setNumOfAnimals(3);
+        super.setFeedingAmount(1);
+        super.setTypeOfFood("Bamboo Chutes");
+    }
     
 }

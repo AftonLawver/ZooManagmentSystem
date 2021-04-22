@@ -9,6 +9,16 @@ package zoomanagementsystem;
  *
  * @author beanrenee
  */
-public class Flamingo {
+public class Flamingo extends SuperAnimals{
+    
+    public Flamingo() {
+        super.setEnclosure(5);
+        super.setName("Flamingo");
+        super.setFamily("Bird");
+        super.setFoodLeft(38);
+        super.setNumOfAnimals(15);
+        super.setFeedingAmount(1);
+        super.setTypeOfFood("Shrimp");
+    }
     
 }
