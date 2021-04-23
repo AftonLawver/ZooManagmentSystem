@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package zoomanagementsystem;
+import java.lang.Object;
 
 /**
  *
@@ -23,47 +24,72 @@ public class AnimalFormGuest extends javax.swing.JFrame {
     public AnimalFormGuest(int mappingValue) {
         initComponents();
         createObjectAnimal(mappingValue);
-        setTitle();
-        
+        setAttributes();
     }
     
-    public void setTitle() {
+    
+    public void setAttributes() {
         String animalName = myAnimal.getName();
-        titleLabel.setText(animalName);
+        titleLabel.setText(animalName); 
+        
+        String animalFamily = myAnimal.getFamily();
+        familyLabelForAnimal.setText(animalFamily);
+        
+        int animalEnclosure = myAnimal.getEnclosure();
+        String animalEnclosureString = String.valueOf(animalEnclosure);
+        enclosureNumberLabelForAnimal.setText(animalEnclosureString);
+        
+        int numberOfAnimals = myAnimal.getNumOfAnimals();
+        String numberOfAnimalsString = String.valueOf(numberOfAnimals);
+        numberOfAnimalsLabelForAnimal.setText(numberOfAnimalsString);
+        
+        String animalFood = myAnimal.getTypeOfFood();
+        foodLabelForAnimal.setText(animalFood);
+        
+        int feedingAmount = myAnimal.getFeedingAmount();
+        String feedingAmountString = String.valueOf(feedingAmount);
+        feedingAmountLabelForAnimal.setText(feedingAmountString);
+        
+        int foodLeft = myAnimal.getFoodLeft();
+        String foodInInventory = String.valueOf(foodLeft);
+        foodInInventoryForAnimal.setText(foodInInventory);
+        
+        
+        
     }
     
     public void createObjectAnimal(int mappingValue) {
 
         switch(mappingValue) {
-            case 1: 
+            case 1: myAnimal = new Lion();
                 break;
-            case 2:
+            case 2: myAnimal = new Tiger();
                 break;
-            case 3:
+            case 3: myAnimal = new Panda();
                 break;
-            case 4: 
+            case 4: myAnimal = new Iguana();
                 break;
-            case 5:
+            case 5: myAnimal = new Flamingo();
                 break;
-            case 6:
+            case 6: myAnimal = new Shark();
                 break;
-            case 7:
+            case 7: myAnimal = new BaldEagle();
                 break;
-            case 8:
+            case 8: myAnimal = new Cheetah();
                 break;
-            case 9: 
+            case 9: myAnimal = new Giraffe();
                 break;
-            case 10:
+            case 10: myAnimal = new Elephant();
                 break;
-            case 11:
+            case 11: myAnimal = new Rhino();
                 break;
-            case 12: 
+            case 12: myAnimal = new Penguin();
                 break;
-            case 13:
+            case 13: myAnimal = new Peacock();
                 break;
-            case 14:
+            case 14: myAnimal = new Toucan();
                 break;
-            case 15:
+            case 15: myAnimal = new Monkey();
                 break;
             case 16: myAnimal = new Koala();   
 
@@ -79,28 +105,150 @@ public class AnimalFormGuest extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         titleLabel = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        familyLabel = new javax.swing.JLabel();
+        numberOfAnimalLabel = new javax.swing.JLabel();
+        familyLabelForAnimal = new javax.swing.JLabel();
+        enclosureNumberLabel = new javax.swing.JLabel();
+        enclosureNumberLabelForAnimal = new javax.swing.JLabel();
+        foodLabel = new javax.swing.JLabel();
+        feedingAmountLabel = new javax.swing.JLabel();
+        foodInInventoryLabel = new javax.swing.JLabel();
+        numberOfAnimalsLabelForAnimal = new javax.swing.JLabel();
+        feedingAmountLabelForAnimal = new javax.swing.JLabel();
+        foodLabelForAnimal = new javax.swing.JLabel();
+        foodInInventoryForAnimal = new javax.swing.JLabel();
+        similarAnimalsLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        titleLabel.setFont(new java.awt.Font("Elephant", 0, 24)); // NOI18N
+        titleLabel.setFont(new java.awt.Font("Elephant", 0, 28)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(0, 51, 204));
+
+        familyLabel.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        familyLabel.setText("Family: ");
+
+        numberOfAnimalLabel.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        numberOfAnimalLabel.setText("Number of: ");
+
+        familyLabelForAnimal.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+
+        enclosureNumberLabel.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        enclosureNumberLabel.setText("Enclosure # ");
+
+        enclosureNumberLabelForAnimal.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+
+        foodLabel.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        foodLabel.setText("Food: ");
+
+        feedingAmountLabel.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        feedingAmountLabel.setText("Feeding Amount: ");
+
+        foodInInventoryLabel.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        foodInInventoryLabel.setText("Food in Inventory: ");
+
+        numberOfAnimalsLabelForAnimal.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+
+        feedingAmountLabelForAnimal.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+
+        foodLabelForAnimal.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+
+        foodInInventoryForAnimal.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(feedingAmountLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(feedingAmountLabelForAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(foodInInventoryLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(foodInInventoryForAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(numberOfAnimalLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(numberOfAnimalsLabelForAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(enclosureNumberLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(enclosureNumberLabelForAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(familyLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(familyLabelForAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(foodLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(foodLabelForAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(familyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(familyLabelForAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(enclosureNumberLabel)
+                    .addComponent(enclosureNumberLabelForAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(numberOfAnimalLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(numberOfAnimalsLabelForAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(foodLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(foodLabelForAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(feedingAmountLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(feedingAmountLabelForAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(foodInInventoryLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(foodInInventoryForAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        similarAnimalsLabel.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
+        similarAnimalsLabel.setText("Similar Animals");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(similarAnimalsLabel)
+                .addGap(102, 102, 102))
             .addGroup(layout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addGap(77, 77, 77)
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(similarAnimalsLabel)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
@@ -143,6 +291,20 @@ public class AnimalFormGuest extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel enclosureNumberLabel;
+    private javax.swing.JLabel enclosureNumberLabelForAnimal;
+    private javax.swing.JLabel familyLabel;
+    private javax.swing.JLabel familyLabelForAnimal;
+    private javax.swing.JLabel feedingAmountLabel;
+    private javax.swing.JLabel feedingAmountLabelForAnimal;
+    private javax.swing.JLabel foodInInventoryForAnimal;
+    private javax.swing.JLabel foodInInventoryLabel;
+    private javax.swing.JLabel foodLabel;
+    private javax.swing.JLabel foodLabelForAnimal;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel numberOfAnimalLabel;
+    private javax.swing.JLabel numberOfAnimalsLabelForAnimal;
+    private javax.swing.JLabel similarAnimalsLabel;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 }

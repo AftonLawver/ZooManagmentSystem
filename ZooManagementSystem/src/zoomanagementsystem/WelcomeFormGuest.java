@@ -6,6 +6,7 @@
 package zoomanagementsystem;
 
 import java.awt.List;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,6 +23,8 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
      */
     public WelcomeFormGuest() {
         initComponents();
+        
+        setIcon();
 
         
     }
@@ -49,6 +52,7 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
         downArrowLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("WelcomeFrameGuest");
         setMinimumSize(new java.awt.Dimension(449, 210));
         setPreferredSize(new java.awt.Dimension(449, 210));
         setResizable(false);
@@ -221,14 +225,10 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
         Map map = createMap();
         int mappingValue = (int) map.get(searchedAnimal);
         
-        //Object animal = createObjectAnimal(mappingValue);
         AnimalFormGuest afg = new AnimalFormGuest(mappingValue);
         afg.setLocationRelativeTo(null); // centers the frame in the screen
         afg.setVisible(true);
-        
-        
-        
-        
+
     }//GEN-LAST:event_searchButtonMouseClicked
     
     public Map createMap() {
@@ -250,46 +250,6 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
         map.put("Monkey", 15);
         map.put("Koala", 16);
         return map;
-    }
-    
-    public void createObjectAnimal(int mappingValue) {
-        
-        switch(mappingValue) {
-            case 1: 
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4: 
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            case 8:
-                break;
-            case 9: 
-                break;
-            case 10:
-                break;
-            case 11:
-                break;
-            case 12: 
-                break;
-            case 13:
-                break;
-            case 14:
-                break;
-            case 15:
-                break;
-            case 16: Koala object = new Koala();   
-
-        }
-
-        
     }
     
     public Integer getMappingValue() {
@@ -344,4 +304,8 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
     private javax.swing.JLabel welcomeLabel;
     private javax.swing.JLabel welcomeLabel2;
     // End of variables declaration//GEN-END:variables
+
+    public void setIcon() {
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("zoo.png")));
+    }
 }
