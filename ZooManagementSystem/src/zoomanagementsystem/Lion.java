@@ -9,6 +9,18 @@ package zoomanagementsystem;
  *
  * @author beanrenee
  */
-public class Lion {
+public class Lion extends SuperAnimals {
+    
+    public Lion () {
+    
+        super.setEnclosure(1);
+        super.setName("Lion");
+        super.setFamily("Mammal");
+        super.setFoodLeft(3);
+        super.setNumOfAnimals(4);
+        super.setFeedingAmount(1);
+        super.setTypeOfFood("Lean Meat");
+        
+    }
     
 }
