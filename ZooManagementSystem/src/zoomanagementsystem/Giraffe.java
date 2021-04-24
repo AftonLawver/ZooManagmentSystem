@@ -22,6 +22,7 @@ public class Giraffe extends SuperAnimals{
         super.setNumOfAnimals(6);
         super.setFeedingAmount(4);
         super.setTypeOfFood("Lettuce");
+        super.setImage("Images/giraffe.png");
     }
     
 }

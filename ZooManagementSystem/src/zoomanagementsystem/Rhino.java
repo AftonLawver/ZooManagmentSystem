@@ -19,6 +19,7 @@ public class Rhino extends SuperAnimals{
         super.setNumOfAnimals(3);
         super.setFeedingAmount(4);
         super.setTypeOfFood("Hay");
+        super.setImage("Images/rhinoceros.png");
     }
     
 }

@@ -5,13 +5,19 @@
  */
 package zoomanagementsystem;
 
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
 /**
  *
  * @author beanrenee
  */
 public class BaldEagle extends SuperAnimals{
     
-    public BaldEagle() {
+    
+    
+    public BaldEagle() throws IOException {
         super.setEnclosure(7);
         super.setName("Bald Eagle");
         super.setFamily("Bird");
@@ -19,6 +25,7 @@ public class BaldEagle extends SuperAnimals{
         super.setNumOfAnimals(1);
         super.setFeedingAmount(1);
         super.setTypeOfFood("Small Fish");
+        super.setImage("Images/eagle.png");
     }
     
 }

@@ -19,6 +19,7 @@ public class Toucan extends SuperAnimals{
         super.setNumOfAnimals(5);
         super.setFeedingAmount(1);
         super.setTypeOfFood("Pellet feed");
+        super.setImage("Images/toucan.png");
     }
     
 }

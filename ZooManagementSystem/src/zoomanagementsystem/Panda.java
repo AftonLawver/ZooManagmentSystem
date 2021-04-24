@@ -18,7 +18,9 @@ public class Panda extends SuperAnimals{
         super.setFoodLeft(8);
         super.setNumOfAnimals(3);
         super.setFeedingAmount(1);
-        super.setTypeOfFood("Bamboo Chutes");
+        super.setTypeOfFood("Bamboo Shoots");
+        super.setImage("Images/panda-bear.png");
+        
     }
     
 }

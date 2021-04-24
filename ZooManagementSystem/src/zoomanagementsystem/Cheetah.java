@@ -19,6 +19,7 @@ public class Cheetah extends SuperAnimals{
         super.setNumOfAnimals(2);
         super.setFeedingAmount(1);
         super.setTypeOfFood("Antelope");
+        super.setImage("Images/cheetah.png");
     }
     
 }

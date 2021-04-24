@@ -7,9 +7,12 @@ package zoomanagementsystem;
 
 import java.awt.List;
 import java.awt.Toolkit;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,8 +26,7 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
      */
     public WelcomeFormGuest() {
         initComponents();
-        
-        setIcon();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("zoo.png")));
 
         
     }
@@ -52,7 +54,7 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
         downArrowLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("WelcomeFrameGuest");
+        setTitle("Welcome!");
         setMinimumSize(new java.awt.Dimension(449, 210));
         setPreferredSize(new java.awt.Dimension(449, 210));
         setResizable(false);
@@ -73,11 +75,6 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
                 searchButtonMouseClicked(evt);
             }
         });
-        searchButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchButtonActionPerformed(evt);
-            }
-        });
 
         searchTextField.setForeground(new java.awt.Color(153, 153, 153));
         searchTextField.setText("Enter Animal Name Here");
@@ -87,11 +84,6 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 searchTextFieldFocusLost(evt);
-            }
-        });
-        searchTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchTextFieldActionPerformed(evt);
             }
         });
 
@@ -105,7 +97,7 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
         });
 
         welcomeLabel2.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
-        welcomeLabel2.setText("Home to 15 Exotic Animals! ");
+        welcomeLabel2.setText("Home to 16 Exotic Animals! ");
 
         searchLabel.setText("Search for an Animal Below");
 
@@ -191,16 +183,7 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
         if(searchTextField.getText().trim().isEmpty()) {
             searchTextField.setText("Enter Animal Name Here");
         }
-        
     }//GEN-LAST:event_searchTextFieldFocusLost
-
-    private void searchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchTextFieldActionPerformed
-
-    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-
-    }//GEN-LAST:event_searchButtonActionPerformed
 
     private void allAnimalsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allAnimalsButtonActionPerformed
         AllAnimals aa = new AllAnimals();
@@ -225,9 +208,18 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
         Map map = createMap();
         int mappingValue = (int) map.get(searchedAnimal);
         
-        AnimalFormGuest afg = new AnimalFormGuest(mappingValue);
-        afg.setLocationRelativeTo(null); // centers the frame in the screen
-        afg.setVisible(true);
+        AnimalFormGuest afg;
+        try {
+            afg = new AnimalFormGuest(mappingValue);
+            afg.setLocationRelativeTo(null); // centers the frame in the screen
+            afg.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(WelcomeFormGuest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+
+        
+        
 
     }//GEN-LAST:event_searchButtonMouseClicked
     
@@ -305,7 +297,5 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
     private javax.swing.JLabel welcomeLabel2;
     // End of variables declaration//GEN-END:variables
 
-    public void setIcon() {
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("zoo.png")));
-    }
+
 }

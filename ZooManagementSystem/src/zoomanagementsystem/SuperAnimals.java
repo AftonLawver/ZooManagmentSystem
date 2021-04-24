@@ -4,12 +4,20 @@
  */
 package zoomanagementsystem;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+
 /**
  * @author Faith Enrietto
  * 04-16-21
  * version 1
  */
 public class SuperAnimals {
+    ImageIcon image; // image for each animal class (icon)
     private int enclosure;      //number of animal's enclosure
     private String name;        //basic name of animal
     private String family;      //what class the animal belongs to, i.e. mammal
@@ -76,6 +84,11 @@ public class SuperAnimals {
     public String getTypeOfFood() {
         return typeOfFood;
     }
+    
+    public ImageIcon getImage() {
+        return image;
+    }
+
 
     /**
      *  for animal enclosure number
@@ -124,6 +137,12 @@ public class SuperAnimals {
     public void setTypeOfFood(String foodType) {
         this.typeOfFood = foodType;
     }
-  
+    
+    public void setImage(String imageName) {
+        ImageIcon iconLogo = new ImageIcon(imageName);
+        this.image = iconLogo;
+        
+    }
+    
   
 }

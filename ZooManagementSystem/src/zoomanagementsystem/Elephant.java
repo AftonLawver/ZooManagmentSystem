@@ -22,6 +22,7 @@ public class Elephant extends SuperAnimals{
         super.setNumOfAnimals(6);
         super.setFeedingAmount(2);
         super.setTypeOfFood("Hay");
+        super.setImage("Images/elephant.png");
     }
 }
       

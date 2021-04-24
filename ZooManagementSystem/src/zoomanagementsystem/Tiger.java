@@ -19,6 +19,7 @@ public class Tiger extends SuperAnimals{
         super.setNumOfAnimals(3);
         super.setFeedingAmount(1);
         super.setTypeOfFood("Antelope Meat");
+        super.setImage("Images/tiger.png");
     }
     
 }

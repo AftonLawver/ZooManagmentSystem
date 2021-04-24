@@ -19,6 +19,7 @@ public class Shark extends SuperAnimals{
         super.setNumOfAnimals(6);
         super.setFeedingAmount(1);
         super.setTypeOfFood("Small Fish");
+        super.setImage("Images/shark.png");
     }
     
 }

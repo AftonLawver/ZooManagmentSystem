@@ -20,6 +20,7 @@ public class Lion extends SuperAnimals {
         super.setNumOfAnimals(4);
         super.setFeedingAmount(1);
         super.setTypeOfFood("Lean Meat");
+        super.setImage("Images/lion.png");
         
     }
     

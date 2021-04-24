@@ -19,6 +19,7 @@ public class Koala extends SuperAnimals{
         super.setNumOfAnimals(3);
         super.setFeedingAmount(1);
         super.setTypeOfFood("Eucalyptus Leaves");
+        super.setImage("Images/koala.png");
     }
     
 }

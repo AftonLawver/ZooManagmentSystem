@@ -6,6 +6,7 @@
 package zoomanagementsystem;
 
 import java.awt.Color;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 
 /**
@@ -18,6 +19,7 @@ public class AllAnimals extends javax.swing.JFrame {
      */
     public AllAnimals() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("zoo.png")));
         ArrayListOperations listOfAnimals = new ArrayListOperations();
         listOfAnimals.createArrayList();
         String strAnimals = listOfAnimals.stringArrayList();
