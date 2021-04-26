@@ -8,6 +8,7 @@ package zoomanagementsystem;
 import java.awt.List;
 import java.awt.Toolkit;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -197,6 +198,7 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
  */
     private void searchButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMouseClicked
         String searchedAnimal = searchTextField.getText().trim();
+        
         ArrayListOperations listOfAnimals = new ArrayListOperations();
         ArrayList allAnimals = listOfAnimals.createArrayList();
         if(allAnimals.contains(searchedAnimal)) {
@@ -216,10 +218,6 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(WelcomeFormGuest.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
-
-        
-        
 
     }//GEN-LAST:event_searchButtonMouseClicked
     
@@ -242,11 +240,8 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
         map.put("Monkey", 15);
         map.put("Koala", 16);
         return map;
-    }
-    
-    public Integer getMappingValue() {
-        return mappingValue;
-    }
+    }   
+
     /**
      * @param args the command line arguments
      */

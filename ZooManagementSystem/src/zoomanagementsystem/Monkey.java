@@ -21,6 +21,6 @@ public class Monkey extends SuperAnimals{
         super.setNumOfAnimals(14);
         super.setFeedingAmount(1);
         super.setTypeOfFood("Fruits");
-        super.setImage("Images/monkey.png");
+        super.setImage("monkey.png");
     }
 }

@@ -20,7 +20,7 @@ public class Peacock extends SuperAnimals{
         super.setNumOfAnimals(8);
         super.setFeedingAmount(1);
         super.setTypeOfFood("Grain");
-        super.setImage("Images/peacock.png");
+        super.setImage("peacock.png");
     }
 }
 

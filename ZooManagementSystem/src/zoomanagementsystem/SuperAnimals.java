@@ -8,6 +8,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
@@ -139,7 +140,8 @@ public class SuperAnimals {
     }
     
     public void setImage(String imageName) {
-        ImageIcon iconLogo = new ImageIcon(imageName);
+        URL url = ClassLoader.getSystemClassLoader().getResource(imageName);
+        ImageIcon iconLogo = new ImageIcon(url);
         this.image = iconLogo;
         
     }

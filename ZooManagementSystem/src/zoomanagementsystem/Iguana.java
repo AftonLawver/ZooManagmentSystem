@@ -19,7 +19,7 @@ public class Iguana extends SuperAnimals{
         super.setNumOfAnimals(4);
         super.setFeedingAmount(1);
         super.setTypeOfFood("Leafy Greens");
-        super.setImage("Images/iguana.png");
+        super.setImage("iguana.png");
     }
     
 }

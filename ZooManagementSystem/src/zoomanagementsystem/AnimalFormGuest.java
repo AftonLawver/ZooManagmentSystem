@@ -4,23 +4,29 @@
  * and open the template in the editor.
  */
 package zoomanagementsystem;
+import java.awt.Color;
 import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.lang.Object;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 
 /**
  *
  * @author SIU851463587
  */
 public class AnimalFormGuest extends javax.swing.JFrame {
-   
+    
     SuperAnimals myAnimal;
+    SuperAnimals myAnimalToCompare;
     public static Integer mappingValue;
+    Map familyMap;
+    
     
     /**
      * Creates new form AnimalForm
@@ -33,6 +39,8 @@ public class AnimalFormGuest extends javax.swing.JFrame {
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("zoo.png")));
         createObjectAnimal(mappingValue);
         setAttributes();
+        createFamilyMap();
+        
     }
     
     
@@ -64,13 +72,9 @@ public class AnimalFormGuest extends javax.swing.JFrame {
         
         ImageIcon animalIcon = myAnimal.getImage();
         pictureArea.setIcon(animalIcon);
-        
-        
-        
-        
     }
     
-    public void createObjectAnimal(int mappingValue) throws IOException {
+    public SuperAnimals createObjectAnimal(int mappingValue) throws IOException {
 
         switch(mappingValue) {
             case 1: myAnimal = new Lion();
@@ -105,10 +109,41 @@ public class AnimalFormGuest extends javax.swing.JFrame {
                 break;
             case 16: myAnimal = new Koala();   
 
-        }
+        }     
+        return myAnimal;
+    }
+    
+    public Map createFamilyMap() {
+        Map<String, String> familyMap = new HashMap<String, String>();
+        familyMap.put("Lion","Mammal");
+        familyMap.put("BaldEagle", "Bird");
+        familyMap.put("Cheetah", "Mammal");
+        familyMap.put("Elephant", "Mammal");
+        familyMap.put("Flamingo", "Bird");
+        familyMap.put("Giraffe", "Mammal");
+        familyMap.put("Iguana", "Reptile");
+        familyMap.put("Koala", "Mammal");
+        familyMap.put("Monkey", "Mammal");
+        familyMap.put("Panda", "Mammal");
+        familyMap.put("Peacock", "Bird");
+        familyMap.put("Penguin", "Bird");
+        familyMap.put("Rhinoceros", "Mammal");
+        familyMap.put("Shark", "Fish");
+        familyMap.put("Tiger", "Mammal");
+        familyMap.put("Toucan", "Bird");
+        return familyMap;
+        
+    }
+    
+    public void displaySimilarAnimals() {
+        
+        String family = myAnimal.getFamily();
+        for(String values : familyMap.values());
         
         
     }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -117,9 +152,7 @@ public class AnimalFormGuest extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
-        titleLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         familyLabel = new javax.swing.JLabel();
         numberOfAnimalLabel = new javax.swing.JLabel();
@@ -136,12 +169,11 @@ public class AnimalFormGuest extends javax.swing.JFrame {
         similarAnimalsLabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         pictureArea = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
+        backLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
-
-        titleLabel.setFont(new java.awt.Font("Elephant", 0, 32)); // NOI18N
-        titleLabel.setForeground(new java.awt.Color(0, 51, 204));
 
         familyLabel.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
         familyLabel.setText("Family: ");
@@ -216,7 +248,7 @@ public class AnimalFormGuest extends javax.swing.JFrame {
                     .addComponent(familyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(familyLabelForAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(enclosureNumberLabel)
                     .addComponent(enclosureNumberLabelForAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -241,21 +273,49 @@ public class AnimalFormGuest extends javax.swing.JFrame {
         similarAnimalsLabel.setFont(new java.awt.Font("Elephant", 0, 12)); // NOI18N
         similarAnimalsLabel.setText("Similar Animals");
 
+        titleLabel.setFont(new java.awt.Font("Elephant", 0, 32)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(0, 51, 204));
+
+        backLabel10.setText("<< Back");
+        backLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backLabel10.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                backLabel10MouseDragged(evt);
+            }
+        });
+        backLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backLabel10MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backLabel10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backLabel10MouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pictureArea, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(backLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pictureArea, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(titleLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pictureArea, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(backLabel10)
+                .addContainerGap(109, Short.MAX_VALUE))
+            .addComponent(pictureArea, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -264,35 +324,44 @@ public class AnimalFormGuest extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(similarAnimalsLabel)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(166, 166, 166)
+                        .addComponent(similarAnimalsLabel))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
                 .addComponent(similarAnimalsLabel)
                 .addGap(45, 45, 45))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabel10MouseEntered
+        backLabel10.setForeground(Color.blue);
+    }//GEN-LAST:event_backLabel10MouseEntered
+
+    private void backLabel10MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabel10MouseDragged
+        backLabel10.setForeground(Color.blue);
+    }//GEN-LAST:event_backLabel10MouseDragged
+
+    private void backLabel10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabel10MouseExited
+        backLabel10.setForeground(Color.black);
+    }//GEN-LAST:event_backLabel10MouseExited
+
+    private void backLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabel10MouseClicked
+        dispose();
+    }//GEN-LAST:event_backLabel10MouseClicked
 
     /**
      * @param args the command line arguments
@@ -335,6 +404,9 @@ public class AnimalFormGuest extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel backLabel;
+    private javax.swing.JLabel backLabel1;
+    private javax.swing.JLabel backLabel10;
     private javax.swing.JLabel enclosureNumberLabel;
     private javax.swing.JLabel enclosureNumberLabelForAnimal;
     private javax.swing.JLabel familyLabel;

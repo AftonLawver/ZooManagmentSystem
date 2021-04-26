@@ -7,7 +7,6 @@ package zoomanagementsystem;
 
 import java.awt.Color;
 import java.awt.Toolkit;
-import java.util.ArrayList;
 
 /**
  *
@@ -24,8 +23,9 @@ public class AllAnimals extends javax.swing.JFrame {
         listOfAnimals.createArrayList();
         String strAnimals = listOfAnimals.stringArrayList();
         allAnimalsTextArea.append(strAnimals);
-        
     } 
+    
+    
 
 
     /**
@@ -45,11 +45,13 @@ public class AllAnimals extends javax.swing.JFrame {
         backLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("All Animals");
 
         jLabel1.setFont(new java.awt.Font("Elephant", 0, 21)); // NOI18N
         jLabel1.setText("RAF Zoo");
         jPanel1.add(jLabel1);
 
+        allAnimalsTextArea.setEditable(false);
         allAnimalsTextArea.setColumns(10);
         allAnimalsTextArea.setRows(17);
         jScrollPane1.setViewportView(allAnimalsTextArea);
@@ -72,6 +74,7 @@ public class AllAnimals extends javax.swing.JFrame {
         );
 
         backLabel.setText("<< Back");
+        backLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 backLabelMouseDragged(evt);
@@ -83,6 +86,9 @@ public class AllAnimals extends javax.swing.JFrame {
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 backLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backLabelMouseExited(evt);
             }
         });
 
@@ -125,7 +131,12 @@ public class AllAnimals extends javax.swing.JFrame {
 
     private void backLabelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseDragged
         backLabel.setForeground(Color.BLUE);
+        
     }//GEN-LAST:event_backLabelMouseDragged
+
+    private void backLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseExited
+        backLabel.setForeground(Color.black);
+    }//GEN-LAST:event_backLabelMouseExited
 
     /**
      * @param args the command line arguments

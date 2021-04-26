@@ -19,6 +19,6 @@ public class Penguin extends SuperAnimals{
         super.setNumOfAnimals(9);
         super.setFeedingAmount(1);
         super.setTypeOfFood("Fish");
-        super.setImage("Images/penguin.png");
+        super.setImage("penguin.png");
     }
 }
