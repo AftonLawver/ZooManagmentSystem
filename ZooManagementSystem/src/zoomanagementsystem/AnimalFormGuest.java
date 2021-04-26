@@ -12,8 +12,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+
 
 
 /**
@@ -138,7 +137,7 @@ public class AnimalFormGuest extends javax.swing.JFrame {
     public void displaySimilarAnimals() {
         
         String family = myAnimal.getFamily();
-        for(String values : familyMap.values());
+        //for(String values : familyMap.values());
         
         
     }

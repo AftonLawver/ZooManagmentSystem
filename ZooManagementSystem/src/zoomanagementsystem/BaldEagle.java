@@ -18,7 +18,7 @@ public class BaldEagle extends SuperAnimals{
     
     
     
-    public BaldEagle() throws IOException {
+    public BaldEagle() {
         super.setEnclosure(7);
         super.setName("Bald Eagle");
         super.setFamily("Bird");
