@@ -73,6 +73,7 @@ public class AllAnimals extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        backLabel.setFont(new java.awt.Font("Elephant", 0, 12)); // NOI18N
         backLabel.setText("<< Back");
         backLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -101,8 +102,8 @@ public class AllAnimals extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addComponent(backLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))

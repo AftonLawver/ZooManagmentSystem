@@ -375,6 +375,7 @@ public class AnimalFormGuest extends javax.swing.JFrame {
         titleLabel.setForeground(new java.awt.Color(0, 51, 204));
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        backLabel10.setFont(new java.awt.Font("Elephant", 0, 14)); // NOI18N
         backLabel10.setText("<< Back");
         backLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backLabel10.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -636,9 +637,7 @@ public class AnimalFormGuest extends javax.swing.JFrame {
                 .addGap(146, 146, 146))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 17, Short.MAX_VALUE))
         );
