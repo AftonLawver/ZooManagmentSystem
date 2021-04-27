@@ -19,7 +19,7 @@ public class Flamingo extends SuperAnimals{
         super.setNumOfAnimals(15);
         super.setFeedingAmount(1);
         super.setTypeOfFood("Shrimp");
-        super.setImage("flamingo.png");
+        super.setImage("flamingo_1.png");
     }
     
 }

@@ -241,6 +241,8 @@ public class WelcomeFormGuest extends javax.swing.JFrame {
         map.put("Koala", 16);
         return map;
     }   
+    
+    
 
     /**
      * @param args the command line arguments
