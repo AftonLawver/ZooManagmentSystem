@@ -1,4 +1,17 @@
 /WelcomeForm/nbproject/private/
-/ZooManagementSystem/nbproject/private/
-/ZooManagementSystem/build/
-/ZooManagementSystem/dist/
+/src/nbproject/private/
+/src/ZooManagementSystem/build/
+/src/ZooManagementSystem/dist/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+
+# Compiled Files
+*.class
+bin/
+build/
+/bin1/
+java/build/**
